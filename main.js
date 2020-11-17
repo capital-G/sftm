@@ -23149,7 +23149,7 @@ var _ezacharias$sftm$Problems$problems = {
 };
 
 var _ezacharias$sftm$Main$version = 34;
-var _ezacharias$sftm$Main$fullPath = 'https://capital-g.github.io/sftm/';
+var _ezacharias$sftm$Main$fullPath = '';
 var _ezacharias$sftm$Main$mainPath = A2(_elm_lang$core$Basics_ops['++'], _ezacharias$sftm$Main$fullPath, '/');
 var _ezacharias$sftm$Main$decodeLocalStorage = function (model) {
 	var f = F2(
