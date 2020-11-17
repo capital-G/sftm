@@ -79,7 +79,6 @@
             });
             app.ports.initialize.subscribe(function(ignore) {
                 schStartHereClicked = function() {
-                    ga('send', 'event', 'Main', 'Start');
                     document.getElementById('initial-content-frame').remove();
                     document.getElementById('elm-content-frame').style.display = null;
                 };
@@ -88,12 +87,8 @@
                 }
             });
             app.ports.sendEvent.subscribe(function(value) {
-                // ga('send', 'event', 'Problem ' + (value.index + 1), 'Solved', value.label, value.steps);
-                ga('send', 'event', value.category, value.action, value.label);
             });
             app.ports.setPage.subscribe(function(pathname) {
-                ga('set', 'page', pathname);
-                ga('send', 'pageview');
             });
             app.ports.setLocalStorage.subscribe(function(value) {
                 try {
