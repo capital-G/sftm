@@ -23149,7 +23149,7 @@ var _ezacharias$sftm$Problems$problems = {
 };
 
 var _ezacharias$sftm$Main$version = 34;
-var _ezacharias$sftm$Main$fullPath = '';
+var _ezacharias$sftm$Main$fullPath = 'https://capital-g.github.io/sftm/';
 var _ezacharias$sftm$Main$mainPath = A2(_elm_lang$core$Basics_ops['++'], _ezacharias$sftm$Main$fullPath, '/');
 var _ezacharias$sftm$Main$decodeLocalStorage = function (model) {
 	var f = F2(
@@ -24053,7 +24053,6 @@ for (var publicModule in Elm)
             });
             app.ports.initialize.subscribe(function(ignore) {
                 schStartHereClicked = function() {
-                    ga('send', 'event', 'Main', 'Start');
                     document.getElementById('initial-content-frame').remove();
                     document.getElementById('elm-content-frame').style.display = null;
                 };
@@ -24062,12 +24061,8 @@ for (var publicModule in Elm)
                 }
             });
             app.ports.sendEvent.subscribe(function(value) {
-                // ga('send', 'event', 'Problem ' + (value.index + 1), 'Solved', value.label, value.steps);
-                ga('send', 'event', value.category, value.action, value.label);
             });
             app.ports.setPage.subscribe(function(pathname) {
-                ga('set', 'page', pathname);
-                ga('send', 'pageview');
             });
             app.ports.setLocalStorage.subscribe(function(value) {
                 try {
