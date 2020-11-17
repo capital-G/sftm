@@ -553,7 +553,7 @@ decodeLocalStorage model =
 
 fullPath : String
 fullPath =
-    "https://sftm.schlussweisen.com"
+    ""
 
 
 mainPath : String
