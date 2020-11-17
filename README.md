@@ -12,6 +12,8 @@ Assuming you have `docker-compose` installed you can simply run this by executin
 docker-compose up
 ```
 
+After this you can access the page locally via [http://localhost:8080/](http://localhost:8080/).
+
 ## Build
 
 ```sh
