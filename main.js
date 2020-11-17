@@ -23149,8 +23149,8 @@ var _ezacharias$sftm$Problems$problems = {
 };
 
 var _ezacharias$sftm$Main$version = 34;
-var _ezacharias$sftm$Main$fullPath = 'https://capital-g.github.io/sftm';
-var _ezacharias$sftm$Main$mainPath = A2(_elm_lang$core$Basics_ops['++'], _ezacharias$sftm$Main$fullPath, '/');
+var _ezacharias$sftm$Main$fullPath = 'https://capital-g.github.io';
+var _ezacharias$sftm$Main$mainPath = A2(_elm_lang$core$Basics_ops['++'], _ezacharias$sftm$Main$fullPath, '/sftm/');
 var _ezacharias$sftm$Main$decodeLocalStorage = function (model) {
 	var f = F2(
 		function (version1, ps) {
@@ -23624,7 +23624,7 @@ var _ezacharias$sftm$Main$proofLocation = F3(
 				return {
 					ctor: '_Tuple2',
 					_0: model,
-					_1: _elm_lang$navigation$Navigation$newUrl(_ezacharias$sftm$Main$mainPath)
+					_1: _elm_lang$navigation$Navigation$newUrl(_ezacharias$sftm$Main$fullPath)
 				};
 			}
 		}
@@ -23696,7 +23696,7 @@ var _ezacharias$sftm$Main$locationUpdate = F3(
 			return {
 				ctor: '_Tuple2',
 				_0: model,
-				_1: _elm_lang$navigation$Navigation$newUrl(_ezacharias$sftm$Main$mainPath)
+				_1: _elm_lang$navigation$Navigation$newUrl(_ezacharias$sftm$Main$fullPath)
 			};
 		} else {
 			return A2(_p25._0, isInit, model);
@@ -23846,7 +23846,7 @@ var _ezacharias$sftm$Main$update = F2(
 											}),
 										_1: {
 											ctor: '::',
-											_0: _elm_lang$navigation$Navigation$newUrl(_ezacharias$sftm$Main$mainPath),
+											_0: _elm_lang$navigation$Navigation$newUrl(_ezacharias$sftm$Main$fullPath),
 											_1: {ctor: '[]'}
 										}
 									}
@@ -23863,7 +23863,7 @@ var _ezacharias$sftm$Main$update = F2(
 						return {
 							ctor: '_Tuple2',
 							_0: model,
-							_1: _elm_lang$navigation$Navigation$newUrl(_ezacharias$sftm$Main$mainPath)
+							_1: _elm_lang$navigation$Navigation$newUrl(_ezacharias$sftm$Main$fullPath)
 						};
 					default:
 						return {
@@ -23887,7 +23887,7 @@ var _ezacharias$sftm$Main$update = F2(
 				return {
 					ctor: '_Tuple2',
 					_0: model,
-					_1: _elm_lang$navigation$Navigation$newUrl(_ezacharias$sftm$Main$mainPath)
+					_1: _elm_lang$navigation$Navigation$newUrl(_ezacharias$sftm$Main$fullPath)
 				};
 			case 'OnScrollMsg':
 				return {
