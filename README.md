@@ -2,9 +2,13 @@
 
 A logic game website.
 
+Website Link: [https://capital-g.github.io/sftm/](https://capital-g.github.io/sftm/)
+
+There is a bug that changes the URL once the site is visited to an invalid address. PR which fixes this are welcome, see `gh-pages` branch.
+
 Forked from [https://github.com/ezacharias/sftm](https://github.com/ezacharias/sftm) which went offline.
 
-## Run
+## Run locally
 
 Assuming you have `docker-compose` installed you can simply run this by executing
 
