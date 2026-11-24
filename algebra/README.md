@@ -37,9 +37,18 @@ parameter names, an always-true tuple tag test, and the glyph script appended to
 Local variable names in decompiled definitions are generated from their types
 (`t1`, `xs`, `m`, …), because the compiled output does not contain the originals.
 
+## Changes after the reconstruction
+
+To serve this edition next to the classic one, the following was changed
+after the archived version (see the git history):
+
+* the app reads a `base` flag (the URL path it is served from) and uses it
+  for navigation and routing instead of assuming it lives at `/`,
+* the problem list links back to the edition chooser ("All editions"),
+* Google Analytics and an unused password gate were removed from `index.html`
+  and `glyphs.js`, and `index.html` became a template for the generated route
+  pages.
+
 ## Build
 
-```sh
-elm-make --output elm.js src/Main.elm
-cat elm.js glyphs.js > site/main.js
-```
+Use `../build.sh`, which builds both editions.

@@ -59,6 +59,17 @@ view ps =
     div [ class "content-body" ]
         [ div [ id "scrolling", onScroll OnScrollMsg ]
             [ ol [ class "top-list" ] (List.indexedMap viewItem ps)
+            , viewEditions
             , viewAbout
             ]
         ]
+
+
+{-| Link back to the page where you choose between the classic and the algebra
+edition. The problem list is always shown at the root of an edition, so the
+parent directory is the edition chooser.
+-}
+viewEditions : Html Msg
+viewEditions =
+    a [ class "listing-editions-item", href "../" ]
+        [ text "All editions" ]

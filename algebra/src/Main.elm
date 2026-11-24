@@ -26,6 +26,7 @@ type alias Model =
     , scrollY : Float
     , page : Page
     , origin : String
+    , base : String
     }
 
 
@@ -51,18 +52,25 @@ type Msg
     | SolvePageMsg Page.Solve.Msg
 
 
+{-| `base` is the URL path the game is served from, without a trailing slash
+(for example "/algebra"), so it can live next to the classic edition.
+-}
 type alias Flags =
-    { local : Maybe String }
+    { local : Maybe String
+    , base : String
+    }
 
 
 version =
     35
 
 
+fullPath : Model -> String
 fullPath model =
-    model.origin
+    model.origin ++ model.base
 
 
+mainPath : Model -> String
 mainPath model =
     fullPath model ++ "/"
 
@@ -225,14 +233,17 @@ introductionLocation isInit model =
             ( newModel, Cmd.batch [ setPage isInit "/introduction/", setLocalStorage newModel ] )
 
 
-initialModel location =
+initialModel : String -> Location -> Model
+initialModel base location =
     { problems = Problem.init Problems.problems
     , page = ListPage
     , scrollY = 0.0
     , origin = location.origin
+    , base = base
     }
 
 
+decodeModel : Flags -> Location -> Model
 decodeModel storage location =
     let
         model =
@@ -247,7 +258,7 @@ decodeModel storage location =
                     Debug.log error model0
 
         model0 =
-            initialModel location
+            initialModel storage.base location
     in
     model
 
@@ -410,7 +421,7 @@ locationUpdate isInit location model =
             Ports.setLocalStorage (encodeLocalStorage p28)
 
         shortPath =
-            location.pathname
+            String.dropLeft (String.length model.base) location.pathname
     in
     case Dict.get shortPath paths of
         Nothing ->

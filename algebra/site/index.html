@@ -1,53 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-<meta name="description" content="A tactical approach to algebraic problem solving." />
-<link type="image/png" rel="icon" href="/icon.png">
-<title>Sympathy for the Machine</title>
-<link type="text/css" rel="stylesheet" href="/main.css">
-<script async src="/main.js"></script>
-<svg style="display:none;"><defs id="glyphs"></defs></svg>
 
-<script>
-        window.ga = window.ga || function() {
-            (ga.q = ga.q || []).push(arguments)
-        };
-        ga.l = +new Date;
-        ga('create', 'UA-99025609-3', 'auto');
-        ga('send', 'pageview');
-    </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="description" content="A tactical approach to algebraic problem solving." />
+    <link type="image/png" rel="icon" href="{{root}}icon.png">
+    <title>Sympathy for the Machine</title>
 
-<script>
+    <link type="text/css" rel="stylesheet" href="{{root}}main.css">
+    <script async src="{{root}}main.js"></script>
+    <svg style="display:none;"><defs id="glyphs"></defs></svg>
+
+    <script>
         var schIsDocumentLoaded = false;
         var schStartHereClicked = function() {
-            // ga('send', 'event', 'Main', 'Start');
             schIsDocumentLoaded = true;
         };
-        var sftmCounter = 1;
     </script>
 </head>
+
 <body>
-<div id="initial-content-frame" class="content-frame">
-<div class="content-body">
-<div class="grow"></div>
-<div class="intro-title">Sympathy for the Machine</div>
-<div id="best" class="intro-sub">A Tactical Approach to Algebraic Problem Solving</div>
-<div class="intro-par">It's problems in basic algebra. All the rules are layed out clearly so you know exactly how everything works. About half-way through you'll know enough to start proving mathematical identities.</div>
-<button class="intro-button" onClick="schStartHereClicked();">Start Here</button>
-<div class="intro-view">Best viewed on a cell phone.</div>
-<div class="grow-2"></div>
-</div>
-</div>
-<div id="elm-content-frame" class="content-frame" style="display:none">
-</div>
-<script>
-       if (localStorage.getItem('book-alg-v1') !== null) {
+
+    <div id="initial-content-frame" class="content-frame">
+        <div class="content-body">
+            <div class="grow"></div>
+            <div class="intro-title">Sympathy for the Machine</div>
+            <div class="intro-sub">A Tactical Approach to Algebraic Problem Solving</div>
+            <div class="intro-par">It's problems in basic algebra. All the rules are layed out clearly so you know exactly how everything works. About half-way through you'll know enough to start proving mathematical identities.</div>
+            <button class="intro-button" onClick="schStartHereClicked();">Start Here</button>
+            <div class="intro-view">Best viewed on a cell phone.</div>
+            <div class="grow-2"></div>
+        </div>
+    </div>
+    <div id="elm-content-frame" class="content-frame" style="display:none">
+    </div>
+
+    <script>
+        if (localStorage.getItem('book-alg-v1') !== null) {
             document.getElementById('initial-content-frame').style.display = 'none';
             schIsDocumentLoaded = true;
         }
     </script>
+
 </body>
+
 </html>

@@ -120,9 +120,21 @@
         }());
         (function() {
             'use strict';
+            // The URL path this edition is served from, without a trailing slash
+            // (for example "/classic" or "/sftm/algebra"). Derived from the URL
+            // main.js was loaded from, so the site works under any prefix.
+            var base = '';
+            var scripts = document.getElementsByTagName('script');
+            for (var i = 0; i < scripts.length; i++) {
+                if (/\/main\.js(\?.*)?$/.test(scripts[i].src)) {
+                    base = new URL(scripts[i].src).pathname.replace(/\/main\.js$/, '');
+                }
+            }
+
             var key = 'book-alg-v1';
             var app = Elm.Main.embed(document.getElementById('elm-content-frame'), {
-                local: localStorage.getItem(key) || null
+                local: localStorage.getItem(key) || null,
+                base: base
             });
             app.ports.initialize.subscribe(function(ignore) {
                 schStartHereClicked = function() {
@@ -134,11 +146,8 @@
                 }
             });
             app.ports.sendEvent.subscribe(function(value) {
-                ga('send', 'event', value.category, value.action, value.label, value.value);
             });
             app.ports.setPage.subscribe(function(pathname) {
-                ga('set', 'page', pathname);
-                ga('send', 'pageview');
             });
             app.ports.setLocalStorage.subscribe(function(value) {
                 try {
@@ -191,19 +200,6 @@
                 window.location.href = "mailto:ezacharias@sympathyforthemachine.com";
             });
         }());
-    };
-    checkPassword = function() {
-        document.getElementById('best').textContent = "" + sftmCounter++;
-        if (document.getElementById('password-field').value === 'demo1') {
-            document.getElementById('best').textContent = "Correct";
-            localStorage.setItem('password', 'demo1');
-            schIsDocumentLoaded = true;
-            if (document.readyState == 'loading') {
-                document.addEventListener('DOMContentLoaded', run);
-            } else {
-                run();
-            }
-        }
     };
     if (document.readyState == 'loading') {
         document.addEventListener('DOMContentLoaded', run);
